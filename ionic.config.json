@@ -1,0 +1,7 @@
+{
+  "name": "ontransport",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

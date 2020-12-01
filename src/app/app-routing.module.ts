@@ -3,14 +3,30 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'start',
     pathMatch: 'full'
   },
+  {
+    path: 'start',
+    loadChildren: () => import('./pages/start/start.module').then( m => m.StartPageModule)
+  },
+  {
+    path: 'start-modal',
+    loadChildren: () => import('./pages/start-modal/start-modal.module').then( m => m.StartModalPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'tab-card-slide',
+    loadChildren: () => import('./pages/tab-card-slide/tab-card-slide.module').then( m => m.TabCardSlidePageModule)
+  },
+  {
+    path: 'carousel-order',
+    loadChildren: () => import('./pages/carousel-order/carousel-order.module').then( m => m.CarouselOrderPageModule)
+  }
 ];
 
 @NgModule({

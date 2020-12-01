@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab-card-slide" text="back" color="primary" mode="ios"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="primary" >Segment</ion-title>
+  </ion-toolbar>
+  
+  <ion-segment value="pizza" (ionChange)="segmentChanged($event)">
+    
+    <ion-segment-button value="all">
+      <ion-label>All</ion-label>
+    </ion-segment-button>
+    
+    <ion-segment-button value="Orders">
+      <ion-label>Orders</ion-label>
+    </ion-segment-button>
+    
+    <ion-segment-button value="Request">
+      <ion-label>Request</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+    
+  </ion-header>
+
+<ion-content>
+
+
+  
+
+  <ion-list>
+    <ion-item *ngFor="let heroe of (superHeroes | async) | filtro: publisher: 'publisher'">
+      <ion-label>
+        <h3>{{heroe.superhero}}<small>{{heroe.alter_ego}}</small></h3>
+        <p>
+          {{heroe.first_appearance}}
+        </p>
+      </ion-label>
+      <ion-label slot="end" class="ion-text-right">{{heroe.publisher}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

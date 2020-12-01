@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>start</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="ion-padding">
+  <ion-list>
+    
+    <ion-item detail="false">
+      <ion-label>Company Images (Logo)</ion-label>
+      <ion-img [src]="image"></ion-img>
+    </ion-item>
+    
+    <ion-item lines="none" class="ion-text-wrap">
+      <ion-label>Company Name</ion-label>
+    </ion-item>
+
+  </ion-list>
+  
+  <form #formulario="ngForm" (ngSubmit)="onSubmit($event)" >
+    <ion-list-header>
+        <ion-label>Formulario {{formulario.valid}}</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Emaill</ion-label>
+      <ion-input  type="email" 
+                  placeholder="ejemplo@gmail.com"
+                  name="email"
+                  [(ngModel)]="usuario.email"
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                  required></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input  type="password" 
+                  name="password"
+                  [(ngModel)]="usuario.password"
+                  placeholder="password"
+                  required></ion-input>
+  </ion-item>
+
+
+  
+    <ion-button type="submit"
+        [disabled]="formulario.invalid"
+        expand="block"
+        (click)="mostrarLoading()"
+        shape="round">
+        login
+        <ion-icon slot="end" name="log-in-outline">
+    </ion-icon></ion-button>
+
+  
+<!--   <ion-list>
+      <ion-item (click)="onClick( item )"
+                *ngFor="let item of usuario.checkBox">
+      <ion-label>{{item.name}}</ion-label>
+      <ion-checkbox   [color]="item.name" 
+                      slot="start"
+                      [(ngModel)]="item.selected"
+                      [ngModelOptions]="{standalone: true}"></ion-checkbox>
+      </ion-item>
+   </ion-list> -->
+
+</form>
+
+
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login" text="star" color="primary" mode="ios"></ion-back-button>
+    </ion-buttons>
+
+    <ion-button slot="end" routerLink="/carousel-order" expand="block" fill="clear" shape="round">
+      Skip
+    </ion-button>
+
+    <ion-title>tabCardSlide</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+
+    <ion-slide >
+      <h1>Slide 1</h1>
+    </ion-slide>
+
+    <ion-slide>
+      <h1>Slide 2</h1>
+    </ion-slide>
+
+    <ion-slide>
+      <h1>Slide 3</h1>
+
+    </ion-slide>
+
+  </ion-slides>
+
+<!--   <ion-footer class="ion-no-border" translucent="true">
+    <ion-toolbar>
+      <ion-button slot="end"  (click)="onClickNext($event)" expand="full" fill="clear" translucent="true">
+        Next
+      </ion-button>
+      <ion-button slot="start"  (click)="onClickPrevious($event)" expand="full" fill="clear" translucent="true">
+        Previous
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer> -->
+
+</ion-content>
